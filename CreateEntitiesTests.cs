@@ -6,13 +6,13 @@ namespace RHiDv2_E2E_Tests.CreateInstances
     public class CreateEntitiesTests : IDisposable
     {
 
-        protected static IWebDriver driver;
+        protected IWebDriver driver;
         public CreateEntitiesTests() 
         {
 
             driver = WebDriverInfra.Create_Browser(BrowserType.Chrome);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            driver.Navigate().GoToUrl($"{Utils.testURL}/login");
+            driver.Navigate().GoToUrl($"{Utils.TestUrl}/login");
 
             driver.Manage().Window.Maximize();
 
@@ -21,11 +21,11 @@ namespace RHiDv2_E2E_Tests.CreateInstances
 
             // Click on First Check box
             IWebElement emailInput = driver.FindElement(By.Id("email"));
-            emailInput.SendKeys(Utils.login);
+            emailInput.SendKeys(Utils.Login);
 
             IWebElement passwordInput = driver.FindElement(By.Id("password"));
             passwordInput.Click();
-            passwordInput.SendKeys(Utils.password);
+            passwordInput.SendKeys(Utils.Password);
 
             // Click on Second Check box
             IWebElement loginButton = driver.FindElement(By.Id("m_login_signin_submit"));
