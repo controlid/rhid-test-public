@@ -11,7 +11,7 @@ namespace RHiDv2_E2E_Tests
             {
                 if (!File.Exists(path)) throw new InvalidOperationException(".env does not exist");
                 string json = String.Empty;
-                using (var stream = new FileStream(path, FileMode.Open))
+                using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read))
                 using (var reader = new StreamReader(stream))
                     json = reader.ReadToEnd();
 
@@ -27,7 +27,7 @@ namespace RHiDv2_E2E_Tests
             {
                 if (!File.Exists(path)) throw new InvalidOperationException(".env does not exist");
                 string json = String.Empty;
-                using (var stream = new FileStream(path, FileMode.Open))
+                using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read))
                 using (var reader = new StreamReader(stream))
                     json = reader.ReadToEnd();
 
@@ -43,7 +43,7 @@ namespace RHiDv2_E2E_Tests
             {
                 if (!File.Exists(path)) throw new InvalidOperationException(".env does not exist");
                 string json = String.Empty;
-                using (var stream = new FileStream(path, FileMode.Open))
+                using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read))
                 using (var reader = new StreamReader(stream))
                     json = reader.ReadToEnd();
 
